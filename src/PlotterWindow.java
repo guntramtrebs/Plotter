@@ -15,14 +15,14 @@ import javax.swing.*;
  * docent: Antje Osten
  * enhancements starting with version 0.11: Guntram Trebs
  * <hr>
- *     class: PlotterWindow (JFrame)
+ * class: PlotterWindow (JFrame)
  * <p>
- *     single window with JPanel for drawing some trigonometric functions
+ * single window with JPanel for drawing some trigonometric functions
  */
 
 public class PlotterWindow extends JFrame {
 
-    private SinusPlotter plotti;
+    private final SinusPlotter plotti;
 
     public PlotterWindow() {
         super("Plotter für Sinus und Kosinus");
