@@ -82,22 +82,28 @@ public class SinusPlotter extends JPanel {
         g.setColor(Color.BLUE);
         g.drawString("y=cos(x)", 10, 65);
 
-        // blue sinus function
-        g.setColor(Color.BLUE);
-
+        // TODO: check if values of tangens and cotangens are valid
         int oldX = 0;
         double oldSinusY = originY - Math.sin((oldX - originX) / (double) pixelPerUnit) * pixelPerUnit;
         double oldCosinusY = originY - Math.cos((oldX - originX) / (double) pixelPerUnit) * pixelPerUnit;
+        double oldTangensY = originY - Math.tan((oldX - originX) / (double) pixelPerUnit) * pixelPerUnit;
         for (int x = 1; x < panelWidth; x++) {
             double sinusY = originY - Math.sin((x - originX) / (double) pixelPerUnit) * pixelPerUnit;
             double cosinusY = originY - Math.cos((x - originX) / (double) pixelPerUnit) * pixelPerUnit;
+            double tangensY = originY - Math.tan((x - originX) / (double) pixelPerUnit) * pixelPerUnit;
 
             g.setColor(Color.RED);
             g.drawLine(oldX, (int) oldSinusY, x, (int) sinusY);
             g.setColor(Color.BLUE);
             g.drawLine(oldX, (int) oldCosinusY, x, (int) cosinusY);
+            g.setColor(Color.GREEN);
+            g.drawLine(oldX, (int) oldTangensY, x, (int) tangensY);
+
+
+
             oldSinusY = sinusY;
             oldCosinusY = cosinusY;
+            oldTangensY = tangensY;
             oldX = x;
         }
     }
