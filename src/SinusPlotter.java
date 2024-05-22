@@ -70,7 +70,11 @@ public class SinusPlotter extends JPanel {
         g.drawLine(panelWidth, originY, panelWidth - arrowLength, originY + arrowHalfWidth);
         for (int i = leftUnit; i < rightUnit; i++) {
             g.drawLine(originX + i * pixelPerUnit, originY - 2, originX + i * pixelPerUnit, originY + 2);
+            if (i != 0) {
+                g.drawString(String.valueOf(i), originX + i * pixelPerUnit -6 , originY + 14);
+            }
         }
+        g.drawString("x", panelWidth -12, originY + 10);
 
         g.setColor(Color.RED);
         g.drawString("y=sin(x)", 10, 45);
