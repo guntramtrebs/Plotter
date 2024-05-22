@@ -79,15 +79,25 @@ public class SinusPlotter extends JPanel {
         g.setColor(Color.RED);
         g.drawString("y=sin(x)", 10, 45);
 
+        g.setColor(Color.BLUE);
+        g.drawString("y=cos(x)", 10, 65);
+
         // blue sinus function
         g.setColor(Color.BLUE);
 
         int oldX = 0;
-        double oldY = originY - Math.sin((oldX - originX) / (double) pixelPerUnit) * pixelPerUnit;
+        double oldSinusY = originY - Math.sin((oldX - originX) / (double) pixelPerUnit) * pixelPerUnit;
+        double oldCosinusY = originY - Math.cos((oldX - originX) / (double) pixelPerUnit) * pixelPerUnit;
         for (int x = 1; x < panelWidth; x++) {
-            double y = originY - Math.sin((x - originX) / (double) pixelPerUnit) * pixelPerUnit;
-            g.drawLine(oldX, (int) oldY, x, (int) y);
-            oldY = y;
+            double sinusY = originY - Math.sin((x - originX) / (double) pixelPerUnit) * pixelPerUnit;
+            double cosinusY = originY - Math.cos((x - originX) / (double) pixelPerUnit) * pixelPerUnit;
+
+            g.setColor(Color.RED);
+            g.drawLine(oldX, (int) oldSinusY, x, (int) sinusY);
+            g.setColor(Color.BLUE);
+            g.drawLine(oldX, (int) oldCosinusY, x, (int) cosinusY);
+            oldSinusY = sinusY;
+            oldCosinusY = cosinusY;
             oldX = x;
         }
     }
