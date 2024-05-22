@@ -21,5 +21,9 @@ public class SinusPlotter extends JPanel {
         g.drawLine(400, 200, 395, 205);
         g.drawLine(200, 0, 195, 5);
         g.drawLine(200, 0, 205, 5);
+
+        g.setColor(Color.RED);
+        g.drawString("y=sin(x)", 10, 45);
+
     }
 }
