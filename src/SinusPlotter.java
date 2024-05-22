@@ -55,10 +55,13 @@ public class SinusPlotter extends JPanel {
         final int topUnit = originY / pixelPerUnit;
         final int bottomUnit = -originY / pixelPerUnit;
 
-
         for (int i = bottomUnit; i < topUnit; i++) {
             g.drawLine(originX - 2, originY - i * pixelPerUnit, originX + 2, originY - i * pixelPerUnit);
+            if (i != 0) {
+                g.drawString(String.valueOf(i), originX + 6, originY - i * pixelPerUnit + 3);
+            }
         }
+        g.drawString("y", originX -12, 10);
 
         // black x axis
         g.setColor(Color.BLACK);
