@@ -25,5 +25,15 @@ public class SinusPlotter extends JPanel {
         g.setColor(Color.RED);
         g.drawString("y=sin(x)", 10, 45);
 
+        double oldSinus = Math.sin(-10)*20;
+
+        for(int i=0; i<400; i++) {
+            g.setColor(Color.BLUE);
+
+            double sinus = Math.sin((double) (i-200)/20);
+            sinus *= 20;
+            g.drawLine(i-1, 200 - (int)oldSinus, i, 200-(int)sinus);
+            oldSinus = sinus;
+        }
     }
 }
