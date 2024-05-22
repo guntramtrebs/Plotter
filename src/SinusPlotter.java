@@ -13,5 +13,10 @@ public class SinusPlotter extends JPanel {
             g.drawLine(i, 198, i, 202);
             g.drawLine(198, i, 202, i);
         }
+
+        g.drawLine(400, 200, 395, 195);
+        g.drawLine(400, 200, 395, 205);
+        g.drawLine(200, 0, 195, 5);
+        g.drawLine(200, 0, 205, 5);
     }
 }
